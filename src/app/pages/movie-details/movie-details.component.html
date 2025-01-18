@@ -1,0 +1,26 @@
+
+
+
+<div class="contain mt-5">
+        <div class="row p-5">
+            <div class="col-12 col-lg-2 " *ngIf="getMovieDetailResult.Poster">
+                    <img 
+                    [src]=" getMovieDetailResult.Poster" 
+                    >
+            </div>
+            <div class="col-12 col-lg-10 mt-5 ">
+                    <h1 class="mt-2 mb-2">{{getMovieDetailResult.Title}}</h1>
+                    <h5 class="text-light"> Released:{{getMovieDetailResult.Year}}  <span class="badge bg-primary p-3 mt-3 mb-3">
+                        Rated:{{getMovieDetailResult.Rated}}
+                    </span>  </h5>
+                    <h5 class="text-light"><span class="text-decoration text-warning fs-5">Genre :</span>{{getMovieDetailResult.Genre}}</h5>
+                     <h5 class="text-light"><span class="text-decoration text-danger fs-5">Director :</span> {{getMovieDetailResult.Director}}</h5>
+
+                   
+                    <h4 class="text-light text-underline">Plot:<span class="fs-5"> {{getMovieDetailResult.Plot}}</span></h4>
+                    
+                    
+                    
+            </div>
+        </div>
+</div> 
