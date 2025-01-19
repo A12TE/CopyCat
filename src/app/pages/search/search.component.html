@@ -1,7 +1,7 @@
 <div class="contain mt-5 p-5">
     <form [formGroup]="searchForm" (ngSubmit)="submitForm()">
         <div class="row">
-            <div class="mb-3 col-lg-10">
+            <div class="mb-3  col-lg-10">
                 <input type="text" class="form-control"  formControlName="movieName" placeholder="Serch Movie Here ...">
               </div>
 
@@ -12,9 +12,9 @@
 
     </form>
 <div class="row mt-5">
-    <div class="col-lg-4" *ngFor="let s of searchResult">
+    <div class="col-lg-4 col-12" *ngFor="let s of searchResult">
         <div class="row">
-            <div class="col-lg-3 mt-4 mb-4" *ngIf="s.Poster">
+            <div class="col-lg-3  mt-4 mb-4" *ngIf="s.Poster">
                 
                 <img
                     [src]=" s.Poster"
@@ -27,8 +27,5 @@
         </div>
     </div>
 </div>
-
-
-
 
 </div>

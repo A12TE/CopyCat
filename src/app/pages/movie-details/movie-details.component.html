@@ -3,12 +3,14 @@
 
 <div class="contain mt-5">
         <div class="row p-5">
-            <div class="col-12 col-lg-2 " *ngIf="getMovieDetailResult.Poster">
+            <div class="col-12 col-lg-2 text-center " *ngIf="getMovieDetailResult.Poster">
                     <img 
                     [src]=" getMovieDetailResult.Poster" 
+                    class="img-fluid"
+                    alt="movie poster"
                     >
             </div>
-            <div class="col-12 col-lg-10 mt-5 ">
+            <div class="col-12 col-lg-10 mt-2">
                     <h1 class="mt-2 mb-2">{{getMovieDetailResult.Title}}</h1>
                     <h5 class="text-light"> Released:{{getMovieDetailResult.Year}}  <span class="badge bg-primary p-3 mt-3 mb-3">
                         Rated:{{getMovieDetailResult.Rated}}

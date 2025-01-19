@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl,FormGroup} from '@angular/forms';
 import { MovieApiServiceService } from 'src/app/service/movie-api-service.service';
 import { Title,Meta } from '@angular/platform-browser';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-search',
@@ -23,24 +24,7 @@ export class SearchComponent implements OnInit {
     'movieName':new FormControl(null)
   });
 
-//   submitForm() {
-//     if (this.searchForm.valid) {
-//         this.service.getSearchMovie(this.searchForm.value.movieName).subscribe(
-//             (result: any) => {
-//                 console.log(result, 'searchmovie##');
-//                 // Assuming the array is located under result.results or similar
-//                 this.searchResult = Array.isArray(result) ? result : result.results || [];
-//                 console.log(this.searchResult)
-//             },
-//             (error) => {
-//                 console.error('Error fetching movie data:', error);
-//                 this.searchResult = []; // Reset to empty array on error
-//             }
-//         );
-//     } else {
-//         console.error('Form is invalid!');
-//     }
-// }
+
 
 
   submitForm()
@@ -49,6 +33,13 @@ export class SearchComponent implements OnInit {
       this.service.getSearchMovie(this.searchForm.value).subscribe((result)=>{
           console.log(result,'searchmovie##');
           this.searchResult = result.Search
+            if(this.searchResult=='' || this.searchResult==null || this.searchResult==undefined){
+              Swal.fire({  
+                text: "404 Not Found",
+                icon: "error"
+              });
+            }
+
           console.log(this.searchResult)
       });
   }
